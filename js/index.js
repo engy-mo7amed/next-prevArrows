@@ -1,9 +1,9 @@
 FontAwesome.config.autoReplaceSvg = false;
-let lightContainer = document.querySelector(".light-container");
-let closebtn = document.getElementById("closeBtn");
-let nextbtn = document.getElementById("nextBtn");
-let prevbtn = document.getElementById("prevBtn");
-let imgBox = document.querySelector(".img-box");
+const lightContainer = document.querySelector(".light-container");
+const closebtn = document.getElementById("closeBtn");
+const nextbtn = document.getElementById("nextBtn");
+const prevbtn = document.getElementById("prevBtn");
+const imgBox = document.querySelector(".img-box");
 let currentIndex;
 
 // add image boxs
@@ -47,9 +47,11 @@ for (let i = 0; i < allimg.length; i++) {
 }
 
 // close light container
+
 closebtn.addEventListener("click", function () {
   closeSlider();
 });
+
 function closeSlider() {
   lightContainer.classList.add("d-none");
 }
@@ -88,18 +90,8 @@ document.body.addEventListener("keydown", function (e) {
   }
 });
 
-document.addEventListener("click" , function (e) {
+document.addEventListener("click", function (e) {
   if (e.target == lightContainer) {
-    closeSlider()
+    closeSlider();
   }
-})
-
-
-
-
-
-
-
-// console.log(document.addEventListener("click", function(e) {
-//     console.log("clicked:", e.target);
-// }));
+});
