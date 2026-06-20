@@ -6,7 +6,7 @@ const prevbtn = document.getElementById("prevBtn");
 const imgBox = document.querySelector(".img-box");
 let currentIndex;
 
-// add image boxs
+////////////// add image boxs///////////////////
 
 let imgs = [
   { img: "imgs/12d0d29ddcd1c8e7d133dccc8ba6b878.jpg" },
@@ -35,8 +35,7 @@ for (let i = 0; i < imgs.length; i++) {
 document.getElementById("row-data").innerHTML = box;
 
 // display light container and change photo
-
-let allimg = document.querySelectorAll(".my-img");
+const allimg = document.querySelectorAll(".my-img");
 for (let i = 0; i < allimg.length; i++) {
   allimg[i].addEventListener("click", function (e) {
     currentIndex = i;
@@ -46,17 +45,12 @@ for (let i = 0; i < allimg.length; i++) {
   });
 }
 
-// close light container
+///////////////////events//////////////////////
 
 closebtn.addEventListener("click", function () {
   closeSlider();
 });
 
-function closeSlider() {
-  lightContainer.classList.add("d-none");
-}
-
-// next and prev btn
 nextbtn.addEventListener("click", function () {
   slider(1);
 });
@@ -64,6 +58,11 @@ nextbtn.addEventListener("click", function () {
 prevbtn.addEventListener("click", function () {
   slider(-1);
 });
+
+///////////////functions ////////////////////
+function closeSlider() {
+  lightContainer.classList.add("d-none");
+}
 
 function slider(step) {
   currentIndex += step;
@@ -76,7 +75,7 @@ function slider(step) {
   imgBox.style.backgroundImage = `url(${newSrc})`;
 }
 
-//keys
+/////////////////keys///////////////////
 
 document.body.addEventListener("keydown", function (e) {
   if (!lightContainer.classList.contains("d-none")) {
